@@ -51,7 +51,7 @@ for i in range(1,rows_count):
             #连接虚拟机
             ssh = paramiko.SSHClient()
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            ssh.connect(publicIp,'10001','账号','密码')
+            ssh.connect(publicIp,'端口号','账号','密码')
             stdin, stdout, stderr = ssh.exec_command('ls')
             content = stdout.read().decode()
             if content == '':
